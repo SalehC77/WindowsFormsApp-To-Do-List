@@ -11,8 +11,7 @@ namespace To_Do_List.Entities
         public int Id { get; set; }
         public int PersonId { get; set; }
         public Person Person { get; set; }
-        public int UserId { get; set; }
-        public User User { get; set; }
+       
         public int StaffTypeId { get; set; }
         public StaffType StaffType { get; set; }
         public decimal Salary { get; set; }
@@ -23,9 +22,9 @@ namespace To_Do_List.Entities
         public string NationalId { get; set; }
 
         public string PassportNumber { get; set; }
-       
 
-       
+        public ICollection<Session> Sessions { get; set; }
+
 
     }
 }
