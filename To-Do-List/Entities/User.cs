@@ -15,8 +15,7 @@ namespace To_Do_List.Entities
         public bool IsActive { get; set; }
         public int RoleId { get; set; }
         public Role Role { get; set; }
-        public int PersonId { get; set; }
-        public Person Person { get; set; }
+        
 
     }
 }

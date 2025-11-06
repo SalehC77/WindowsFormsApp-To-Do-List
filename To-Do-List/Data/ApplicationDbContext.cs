@@ -13,7 +13,7 @@ namespace To_Do_List.Data
 
         public virtual DbSet<Role> Roles  { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<DisabilityType> DisabilityTypes { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Donor> Donors { get; set; }
@@ -28,8 +28,8 @@ namespace To_Do_List.Data
         {
             
             base.OnModelCreating(modelBuilder);
-            
-            
+           
+
         }
     }
 }

@@ -17,8 +17,8 @@ namespace To_Do_List.Entities
         public string Address { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
-        public ICollection<Student> Students { get; set; }
-        public ICollection<Donor> Donors { get; set; }
-        public ICollection<Staff> Staffs { get; set; }
+        //public ICollection<Student> Students { get; set; }
+        //public ICollection<Donor> Donors { get; set; }
+        //public ICollection<Staff> Staffs { get; set; }
     }
 }
