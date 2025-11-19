@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace To_Do_List
 {
-    public partial class Doctor_Home : Form
+    public partial class DoctorSession : Form
     {
-        public Doctor_Home()
+        public DoctorSession()
         {
             InitializeComponent();
+        }
+
+        private void dgvdoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DoctorSession_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
