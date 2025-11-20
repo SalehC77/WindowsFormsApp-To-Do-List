@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace To_Do_List
 {
-    public partial class Form1 : Form
+    public partial class Student_Home : ParentForm
     {
-        public Form1()
+        public Student_Home()
         {
             InitializeComponent();
+        }
+
+        private void Student_Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void navbarPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
