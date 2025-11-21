@@ -95,13 +95,16 @@ namespace To_Do_List
 
         private void label_donor_home_Click(object sender, EventArgs e)
         {
-            // Donor_Home HomeForm = new Donor_Home();
+             Donor_Home HomeForm = new Donor_Home();
 
-            //// عرض الفورم Home
-            //HomeForm.Show();
+            HomeForm.Show();
 
-            //// إغلاق الفورم الحالي (DonationPage)
-            //this.Close();
+            this.Hide();
+
+        }
+
+        private void title_Click(object sender, EventArgs e)
+        {
 
         }
     }

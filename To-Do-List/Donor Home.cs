@@ -25,10 +25,30 @@ namespace To_Do_List
 
         private void label_make_donation_Click(object sender, EventArgs e)
         {
-            //Donation_Page donationForm = new Donation_Page();
-            //donationForm.Show();
+            Donation_Page donationForm = new Donation_Page();
+            donationForm.Show();
 
-            //this.Hide();
+            this.Hide();
+        }
+
+        private void title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void title_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Donor_Home_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

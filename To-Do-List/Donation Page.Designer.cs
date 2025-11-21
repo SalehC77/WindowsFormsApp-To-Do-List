@@ -33,7 +33,6 @@
             this.label_make_donation = new System.Windows.Forms.Label();
             this.label_donor_home = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.title = new System.Windows.Forms.Label();
             this.label_amount = new System.Windows.Forms.Label();
             this.textBox_amount = new System.Windows.Forms.TextBox();
             this.label_currency = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label_donation_date = new System.Windows.Forms.Label();
             this.richTextBox_purpose = new System.Windows.Forms.RichTextBox();
+            this.title = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture1)).BeginInit();
@@ -108,17 +108,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1083, 47);
             this.panel1.TabIndex = 3;
-            // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.title.Location = new System.Drawing.Point(48, 10);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(254, 25);
-            this.title.TabIndex = 13;
-            this.title.Text = "Center for Special Needs";
             // 
             // label_amount
             // 
@@ -262,6 +251,17 @@
             this.richTextBox_purpose.TabIndex = 21;
             this.richTextBox_purpose.Text = "";
             // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.title.Location = new System.Drawing.Point(35, 9);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(125, 29);
+            this.title.TabIndex = 14;
+            this.title.Text = "Tamkken";
+            // 
             // Donation_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -303,7 +303,6 @@
         private System.Windows.Forms.Label label_make_donation;
         private System.Windows.Forms.Label label_donor_home;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label label_amount;
         private System.Windows.Forms.TextBox textBox_amount;
         private System.Windows.Forms.Label label_currency;
@@ -318,5 +317,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label_donation_date;
         private System.Windows.Forms.RichTextBox richTextBox_purpose;
+        private System.Windows.Forms.Label title;
     }
 }

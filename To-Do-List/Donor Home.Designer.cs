@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label_donor_home = new System.Windows.Forms.Label();
-            this.label_make_donation = new System.Windows.Forms.Label();
             this.label_log_out = new System.Windows.Forms.Label();
+            this.label_make_donation = new System.Windows.Forms.Label();
+            this.label_donor_home = new System.Windows.Forms.Label();
             this.label_welcome = new System.Windows.Forms.Label();
             this.label_information = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
@@ -41,22 +40,13 @@
             this.label_date_brith = new System.Windows.Forms.Label();
             this.label_phone = new System.Windows.Forms.Label();
             this.label_address = new System.Windows.Forms.Label();
-            this.title = new System.Windows.Forms.Label();
             this.picture1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.title = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.title);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1083, 47);
-            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -68,17 +58,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(216, 822);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label_donor_home
+            // label_log_out
             // 
-            this.label_donor_home.AutoSize = true;
-            this.label_donor_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_donor_home.ForeColor = System.Drawing.SystemColors.Control;
-            this.label_donor_home.Location = new System.Drawing.Point(35, 27);
-            this.label_donor_home.Name = "label_donor_home";
-            this.label_donor_home.Size = new System.Drawing.Size(132, 25);
-            this.label_donor_home.TabIndex = 0;
-            this.label_donor_home.Text = "Donor Home";
+            this.label_log_out.AutoSize = true;
+            this.label_log_out.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_log_out.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_log_out.Location = new System.Drawing.Point(53, 118);
+            this.label_log_out.Name = "label_log_out";
+            this.label_log_out.Size = new System.Drawing.Size(89, 25);
+            this.label_log_out.TabIndex = 2;
+            this.label_log_out.Text = "Log Out";
             // 
             // label_make_donation
             // 
@@ -92,16 +83,16 @@
             this.label_make_donation.Text = "Make a Donation";
             this.label_make_donation.Click += new System.EventHandler(this.label_make_donation_Click);
             // 
-            // label_log_out
+            // label_donor_home
             // 
-            this.label_log_out.AutoSize = true;
-            this.label_log_out.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_log_out.ForeColor = System.Drawing.SystemColors.Control;
-            this.label_log_out.Location = new System.Drawing.Point(53, 118);
-            this.label_log_out.Name = "label_log_out";
-            this.label_log_out.Size = new System.Drawing.Size(89, 25);
-            this.label_log_out.TabIndex = 2;
-            this.label_log_out.Text = "Log Out";
+            this.label_donor_home.AutoSize = true;
+            this.label_donor_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_donor_home.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_donor_home.Location = new System.Drawing.Point(35, 27);
+            this.label_donor_home.Name = "label_donor_home";
+            this.label_donor_home.Size = new System.Drawing.Size(132, 25);
+            this.label_donor_home.TabIndex = 0;
+            this.label_donor_home.Text = "Donor Home";
             // 
             // label_welcome
             // 
@@ -184,17 +175,6 @@
             this.label_address.TabIndex = 11;
             this.label_address.Text = " Address:";
             // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.title.Location = new System.Drawing.Point(48, 10);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(254, 25);
-            this.title.TabIndex = 13;
-            this.title.Text = "Center for Special Needs";
-            // 
             // picture1
             // 
             this.picture1.Image = global::To_Do_List.Properties.Resources.DONOR;
@@ -204,6 +184,28 @@
             this.picture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture1.TabIndex = 12;
             this.picture1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.title);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1083, 47);
+            this.panel1.TabIndex = 0;
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.title.Location = new System.Drawing.Point(35, 9);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(125, 29);
+            this.title.TabIndex = 14;
+            this.title.Text = "Tamkken";
+            this.title.Click += new System.EventHandler(this.title_Click_1);
             // 
             // Donor_Home
             // 
@@ -223,19 +225,18 @@
             this.Controls.Add(this.panel1);
             this.Name = "Donor_Home";
             this.Text = " Donor Home";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Donor_Home_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label_log_out;
         private System.Windows.Forms.Label label_make_donation;
@@ -249,6 +250,7 @@
         private System.Windows.Forms.Label label_phone;
         private System.Windows.Forms.Label label_address;
         private System.Windows.Forms.PictureBox picture1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label title;
     }
 }
