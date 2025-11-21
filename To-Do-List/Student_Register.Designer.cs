@@ -56,7 +56,7 @@
             // 
             this.stage_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.stage_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.stage_textBox.Location = new System.Drawing.Point(386, 270);
+            this.stage_textBox.Location = new System.Drawing.Point(386, 276);
             this.stage_textBox.Multiline = true;
             this.stage_textBox.Name = "stage_textBox";
             this.stage_textBox.Size = new System.Drawing.Size(182, 30);
@@ -66,7 +66,7 @@
             // 
             this.phone_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.phone_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phone_textBox.Location = new System.Drawing.Point(386, 180);
+            this.phone_textBox.Location = new System.Drawing.Point(386, 182);
             this.phone_textBox.Multiline = true;
             this.phone_textBox.Name = "phone_textBox";
             this.phone_textBox.Size = new System.Drawing.Size(182, 30);
@@ -76,7 +76,7 @@
             // 
             this.Address_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.Address_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Address_textBox.Location = new System.Drawing.Point(386, 225);
+            this.Address_textBox.Location = new System.Drawing.Point(386, 229);
             this.Address_textBox.Multiline = true;
             this.Address_textBox.Name = "Address_textBox";
             this.Address_textBox.Size = new System.Drawing.Size(182, 30);
@@ -98,7 +98,7 @@
             this.RegisterButton.FlatAppearance.BorderSize = 0;
             this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterButton.ForeColor = System.Drawing.Color.White;
-            this.RegisterButton.Location = new System.Drawing.Point(473, 408);
+            this.RegisterButton.Location = new System.Drawing.Point(473, 405);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(95, 30);
             this.RegisterButton.TabIndex = 11;
@@ -109,18 +109,20 @@
             // genderComboBox
             // 
             this.genderComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderComboBox.FormattingEnabled = true;
             this.genderComboBox.Items.AddRange(new object[] {
+            "choose your gender",
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(386, 139);
+            this.genderComboBox.Location = new System.Drawing.Point(386, 141);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(182, 24);
             this.genderComboBox.TabIndex = 12;
             // 
             // DateOfBirth_DateTimePicker
             // 
-            this.DateOfBirth_DateTimePicker.Location = new System.Drawing.Point(386, 367);
+            this.DateOfBirth_DateTimePicker.Location = new System.Drawing.Point(386, 364);
             this.DateOfBirth_DateTimePicker.Name = "DateOfBirth_DateTimePicker";
             this.DateOfBirth_DateTimePicker.Size = new System.Drawing.Size(182, 24);
             this.DateOfBirth_DateTimePicker.TabIndex = 13;
@@ -128,6 +130,7 @@
             // disability_comboBox
             // 
             this.disability_comboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.disability_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.disability_comboBox.FormattingEnabled = true;
             this.disability_comboBox.Items.AddRange(new object[] {
             ""});

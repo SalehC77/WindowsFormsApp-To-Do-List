@@ -7,10 +7,12 @@ using System.Windows.Forms;
 using To_Do_List.Data;
 using To_Do_List.Entities;
 
+
 namespace To_Do_List
 {
     public partial class Student_Register : ParentForm
     {
+        User userModel;
         Person personModel = new Person();
         Student studentModel = new Student();
         ApplicationDbContext db = new ApplicationDbContext();
@@ -19,8 +21,9 @@ namespace To_Do_List
         //private ComboBox disability_comboBox; // Add this field to the class to fix CS0103
         //private DateTimePicker DateOfBirth_DateTimePicker; // Add this field to the class to fix CS0103
 
-        public Student_Register()
+        internal Student_Register(User userModel)
         {
+            this.userModel = userModel;
             InitializeComponent();
             SetPlaceholders();
             LoadDisabilities();
@@ -47,7 +50,10 @@ namespace To_Do_List
         {
             var disabilityTypes = db.DisabilityTypes.Select(d => d.Name).ToArray();
             disability_comboBox.Items.Clear();
+            disability_comboBox.Items.Add("choose disability type"); // Option for no disability
             disability_comboBox.Items.AddRange(disabilityTypes);
+            genderComboBox.SelectedIndex = 0;
+            disability_comboBox.SelectedIndex = 0;
         }
 
         private void SetPlaceholders()
@@ -110,11 +116,11 @@ namespace To_Do_List
                 errors.Add("Address is required.");
 
             // Gender combo must have a selection (blank check)
-            if (genderComboBox == null || string.IsNullOrWhiteSpace(genderComboBox.Text))
+            if (genderComboBox == null || string.IsNullOrWhiteSpace(genderComboBox.Text) || genderComboBox.Text == "choose your gender")
                 errors.Add("Gender must be selected.");
 
-            // Disability combo if present must not be blank
-            if (disability_comboBox != null && string.IsNullOrWhiteSpace(disability_comboBox.Text))
+            // Disability combo: check that an item is selected and SelectedIndex is not 0 (placeholder)
+            if (disability_comboBox == null || disability_comboBox.SelectedIndex <= 0)
                 errors.Add("Disability must be selected.");
 
             combinedErrors = errors.Count == 0 ? null : string.Join(Environment.NewLine, errors);
@@ -138,7 +144,11 @@ namespace To_Do_List
             personModel.Address = Address_textBox.Text;
 
             // Set foreign key if required
-            // personModel.UserId = currentUser.Id; // Uncomment and set currentUser.Id
+            personModel.UserId = userModel.Id;
+            personModel.User = userModel;
+
+            db.People.Add(personModel);
+            db.SaveChanges(); // Save to get the generated Person ID
 
             // Set Student
             studentModel.Person = personModel;
@@ -146,32 +156,31 @@ namespace To_Do_List
             studentModel.EducationalStage = stage_textBox.Text;
 
             var disability = db.DisabilityTypes.FirstOrDefault(d => d.Name == disability_comboBox.Text);
-            if (disability != null)
-            {
-                studentModel.DisabilityType = disability;
-                studentModel.DisabilityTypeId = disability.Id;
-            }
+
+            studentModel.DisabilityType = disability;
+            studentModel.DisabilityTypeId = disability.Id;
+            
 
             studentModel.IsAccept = true;
 
-            db.People.Add(personModel);
+
             db.Students.Add(studentModel);
 
             try
             {
-                int check = db.SaveChanges();
-                if (check > 0)
-                    MessageBox.Show("Record has been saved successfully.", "Saving Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else
-                    MessageBox.Show("Failed to save record.", "Saving Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                db.SaveChanges();
+                //if (check > 0)
+                //    MessageBox.Show("Record has been saved successfully.", "Saving Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //else
+                //    MessageBox.Show("Failed to save record.", "Saving Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error saving record:\n" + ex.Message, "Saving Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            this.Hide();
-            new Student_Home().Show();
+            this.Close();
+            new Student_Home(personModel).Show();
         }
 
     }

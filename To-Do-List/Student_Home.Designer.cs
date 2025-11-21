@@ -33,8 +33,8 @@
             this.intro_label = new System.Windows.Forms.Label();
             this.viewDoctors_LinkLabel = new System.Windows.Forms.LinkLabel();
             this.navbarPanel = new System.Windows.Forms.Panel();
-            this.logOut_linkLabel = new System.Windows.Forms.LinkLabel();
             this.viewActivities_LinkLabel = new System.Windows.Forms.LinkLabel();
+            this.logOut_linkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.navbarPanel.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             // 
             this.viewDoctors_LinkLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(161)))), ((int)(((byte)(0)))));
             this.viewDoctors_LinkLabel.AutoSize = true;
+            this.viewDoctors_LinkLabel.ForeColor = System.Drawing.Color.White;
             this.viewDoctors_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.viewDoctors_LinkLabel.LinkColor = System.Drawing.Color.White;
             this.viewDoctors_LinkLabel.Location = new System.Drawing.Point(33, 18);
@@ -81,6 +82,7 @@
             this.viewDoctors_LinkLabel.TabIndex = 5;
             this.viewDoctors_LinkLabel.TabStop = true;
             this.viewDoctors_LinkLabel.Text = "View Doctors";
+            this.viewDoctors_LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.viewDoctors_LinkLabel_LinkClicked);
             // 
             // navbarPanel
             // 
@@ -94,19 +96,6 @@
             this.navbarPanel.TabIndex = 1;
             this.navbarPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.navbarPanel_Paint);
             // 
-            // logOut_linkLabel
-            // 
-            this.logOut_linkLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(161)))), ((int)(((byte)(0)))));
-            this.logOut_linkLabel.AutoSize = true;
-            this.logOut_linkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.logOut_linkLabel.LinkColor = System.Drawing.Color.White;
-            this.logOut_linkLabel.Location = new System.Drawing.Point(48, 96);
-            this.logOut_linkLabel.Name = "logOut_linkLabel";
-            this.logOut_linkLabel.Size = new System.Drawing.Size(58, 17);
-            this.logOut_linkLabel.TabIndex = 6;
-            this.logOut_linkLabel.TabStop = true;
-            this.logOut_linkLabel.Text = "Log Out";
-            // 
             // viewActivities_LinkLabel
             // 
             this.viewActivities_LinkLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(161)))), ((int)(((byte)(0)))));
@@ -119,6 +108,20 @@
             this.viewActivities_LinkLabel.TabIndex = 7;
             this.viewActivities_LinkLabel.TabStop = true;
             this.viewActivities_LinkLabel.Text = "View Activities";
+            this.viewActivities_LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.viewActivities_LinkLabel_LinkClicked);
+            // 
+            // logOut_linkLabel
+            // 
+            this.logOut_linkLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(161)))), ((int)(((byte)(0)))));
+            this.logOut_linkLabel.AutoSize = true;
+            this.logOut_linkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.logOut_linkLabel.LinkColor = System.Drawing.Color.White;
+            this.logOut_linkLabel.Location = new System.Drawing.Point(48, 96);
+            this.logOut_linkLabel.Name = "logOut_linkLabel";
+            this.logOut_linkLabel.Size = new System.Drawing.Size(58, 17);
+            this.logOut_linkLabel.TabIndex = 6;
+            this.logOut_linkLabel.TabStop = true;
+            this.logOut_linkLabel.Text = "Log Out";
             // 
             // Student_Home
             // 

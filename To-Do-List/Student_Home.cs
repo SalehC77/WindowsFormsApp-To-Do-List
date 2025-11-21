@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using To_Do_List.Entities;
 
 namespace To_Do_List
 {
-    public partial class Student_Home : ParentForm
+    internal partial class Student_Home : ParentForm
     {
-        public Student_Home()
+        Person currentPerson;
+        public Student_Home(Person currentPerson)
         {
+            this.currentPerson = currentPerson;
             InitializeComponent();
         }
 
@@ -25,6 +28,18 @@ namespace To_Do_List
         private void navbarPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void viewDoctors_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            new viewDoctors(currentPerson).Show();
+        }
+
+        private void viewActivities_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            new ViewActivites(currentPerson).Show();
         }
     }
 }
