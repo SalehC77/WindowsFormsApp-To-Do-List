@@ -19,22 +19,15 @@ namespace To_Do_List
 
         public ViewActivites(Person currentPerson)
         {
-            //this.currentPerson = currentPerson;
-            InitializeComponent();
             this.currentPerson = currentPerson;
-            //currentPerson = db.People.FirstOrDefault(s => s.Id == 5);
-
-            // initialize notes placeholder behavior
+            InitializeComponent();
             InitializeNotesPlaceholder();
-
-            // ensure DB is disposed when form closes
             this.FormClosed += ViewActivites_FormClosed;
-
             var currentDisability = db.Students.Where(s => s.PersonId == currentPerson.Id)
                                        .Select(s => s.DisabilityType.Id)
                                        .FirstOrDefault();
-            var activities = db.Activities
-                .Where(a => a.DisabilityTypeId == currentDisability)
+           
+            var activities = db.Activities.Where(a => a.DisabilityTypeId == currentDisability)
                 .Select(a => new
                 {
                     a.Id,
@@ -44,7 +37,6 @@ namespace To_Do_List
                     a.Description
                 })
                 .ToList();
-
             foreach (var activity in activities)
             {
                 activities_dataGridView.Rows.Add(
@@ -56,19 +48,6 @@ namespace To_Do_List
                 );
             }
         }
-
-        private void viewDoctors_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Close();
-            new viewDoctors(currentPerson).Show();
-        }
-
-        private void logOut_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Close();
-            //new LoginForm().Show();
-        }
-
         private void makeAppointment_button_Click(object sender, EventArgs e)
         {
             if(activities_dataGridView.SelectedRows.Count == 0)
@@ -109,43 +88,47 @@ namespace To_Do_List
             }
             notes_richTextBox.Text = notesPlaceholder;
         }
+        private void viewDoctors_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            new viewDoctors(currentPerson).Show();
+        }
 
-        // ----- Notes placeholder and validation (copied from viewDoctors) -----
+        private void logOut_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            new Login().Show();
+        }
+
         private string notesPlaceholder = "Enter your notes here...";
-
         private void InitializeNotesPlaceholder()
         {
             notes_richTextBox.Text = notesPlaceholder;
             notes_richTextBox.ForeColor = Color.Gray;
 
-            notes_richTextBox.Enter += Notes_richTextBox_Enter;
-            notes_richTextBox.Leave += Notes_richTextBox_Leave;
-        }
-
-        private void Notes_richTextBox_Enter(object sender, EventArgs e)
-        {
-            if (notes_richTextBox.Text == notesPlaceholder)
+            notes_richTextBox.Enter += (s, e) =>
             {
-                notes_richTextBox.Text = "";
-                notes_richTextBox.ForeColor = Color.Black;
-            }
-        }
+                if (notes_richTextBox.Text == notesPlaceholder)
+                {
+                    notes_richTextBox.Text = "";
+                    notes_richTextBox.ForeColor = Color.Black;
+                }
+            };
 
-        private void Notes_richTextBox_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(notes_richTextBox.Text))
+            notes_richTextBox.Leave += (s, e) =>
             {
-                notes_richTextBox.Text = notesPlaceholder;
-                notes_richTextBox.ForeColor = Color.Gray;
-            }
+                if (string.IsNullOrWhiteSpace(notes_richTextBox.Text))
+                {
+                    notes_richTextBox.Text = notesPlaceholder;
+                    notes_richTextBox.ForeColor = Color.Gray;
+                }
+            };
         }
-
         private bool IsNotesValid()
         {
             return !string.IsNullOrWhiteSpace(notes_richTextBox.Text)
                    && notes_richTextBox.Text != notesPlaceholder;
         }
-
         private void ViewActivites_FormClosed(object sender, FormClosedEventArgs e)
         {
             db.Dispose();

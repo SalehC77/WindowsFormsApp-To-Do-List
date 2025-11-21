@@ -94,7 +94,6 @@
             this.navbarPanel.Name = "navbarPanel";
             this.navbarPanel.Size = new System.Drawing.Size(154, 407);
             this.navbarPanel.TabIndex = 1;
-            this.navbarPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.navbarPanel_Paint);
             // 
             // viewActivities_LinkLabel
             // 
@@ -122,6 +121,7 @@
             this.logOut_linkLabel.TabIndex = 6;
             this.logOut_linkLabel.TabStop = true;
             this.logOut_linkLabel.Text = "Log Out";
+            this.logOut_linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logOut_linkLabel_LinkClicked);
             // 
             // Student_Home
             // 
@@ -135,7 +135,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Student_Home";
             this.Text = "Student_Home";
-            this.Load += new System.EventHandler(this.Student_Home_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.welcome_label, 0);
             this.Controls.SetChildIndex(this.intro_label, 0);

@@ -44,6 +44,7 @@
             this.makeAppointment_button = new System.Windows.Forms.Button();
             this.duration_comboBox = new System.Windows.Forms.ComboBox();
             this.notes_richTextBox = new System.Windows.Forms.RichTextBox();
+            this.Price_label = new System.Windows.Forms.Label();
             this.navbarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctors_dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -185,7 +186,7 @@
             this.makeAppointment_button.FlatAppearance.BorderSize = 0;
             this.makeAppointment_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.makeAppointment_button.ForeColor = System.Drawing.Color.White;
-            this.makeAppointment_button.Location = new System.Drawing.Point(191, 372);
+            this.makeAppointment_button.Location = new System.Drawing.Point(191, 389);
             this.makeAppointment_button.Name = "makeAppointment_button";
             this.makeAppointment_button.Size = new System.Drawing.Size(121, 38);
             this.makeAppointment_button.TabIndex = 7;
@@ -207,6 +208,7 @@
             this.duration_comboBox.Name = "duration_comboBox";
             this.duration_comboBox.Size = new System.Drawing.Size(171, 24);
             this.duration_comboBox.TabIndex = 8;
+            this.duration_comboBox.SelectedIndexChanged += new System.EventHandler(this.duration_comboBox_SelectedIndexChanged);
             // 
             // notes_richTextBox
             // 
@@ -216,12 +218,23 @@
             this.notes_richTextBox.TabIndex = 9;
             this.notes_richTextBox.Text = "";
             // 
+            // Price_label
+            // 
+            this.Price_label.AutoSize = true;
+            this.Price_label.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Price_label.Location = new System.Drawing.Point(188, 358);
+            this.Price_label.Name = "Price_label";
+            this.Price_label.Size = new System.Drawing.Size(108, 16);
+            this.Price_label.TabIndex = 11;
+            this.Price_label.Text = "Price : 0 Dollars";
+            // 
             // viewDoctors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Price_label);
             this.Controls.Add(this.notes_richTextBox);
             this.Controls.Add(this.duration_comboBox);
             this.Controls.Add(this.makeAppointment_button);
@@ -238,6 +251,7 @@
             this.Controls.SetChildIndex(this.makeAppointment_button, 0);
             this.Controls.SetChildIndex(this.duration_comboBox, 0);
             this.Controls.SetChildIndex(this.notes_richTextBox, 0);
+            this.Controls.SetChildIndex(this.Price_label, 0);
             this.navbarPanel.ResumeLayout(false);
             this.navbarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctors_dataGridView)).EndInit();
@@ -264,5 +278,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn experienceColumn;
+        private System.Windows.Forms.Label Price_label;
     }
 }
