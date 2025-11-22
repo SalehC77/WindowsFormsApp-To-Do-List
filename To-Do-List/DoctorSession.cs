@@ -19,7 +19,7 @@ namespace To_Do_List
         public DoctorSession()
         {
             InitializeComponent();
-            _doctorId = staffId;
+            //_doctorId = staffId;
             _db = new ApplicationDbContext();
 
         }
@@ -47,6 +47,11 @@ namespace To_Do_List
         }
 
         private void dgvdoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

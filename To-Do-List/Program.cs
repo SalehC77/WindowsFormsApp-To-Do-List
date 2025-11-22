@@ -16,7 +16,7 @@ namespace To_Do_List
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DoctorSession());
+            Application.Run(new StaffForm());
         }
     }
 }
