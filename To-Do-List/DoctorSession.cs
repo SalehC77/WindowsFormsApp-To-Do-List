@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using To_Do_List.Data;
+using System.Data.Entity;
 
 namespace To_Do_List
 {
@@ -33,16 +34,18 @@ namespace To_Do_List
         {
             var data = _db.Sessions
                 .Where( s => s.StaffId == _doctorId)
+                .Include(s => s.Student)
                 .OrderBy( s => s.SessionDate)
                 .Select( s => new
                 {
                     s.SessionDate,
                     s.DurationMinutes,
                     s.Price,
-                    s.Notes
+                    s.Notes,
+                    StudentName = s.Student.Person.FullName 
                 }).ToList();
 
-            dgvdoctor.AutoGenerateColumns = false;
+            dgvdoctor.AutoGenerateColumns = true;
             dgvdoctor.DataSource = data;
         }
 
