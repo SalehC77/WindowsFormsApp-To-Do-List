@@ -66,6 +66,9 @@ namespace To_Do_List.Properties {
         internal static System.Drawing.Bitmap _32dcc7d8_2009_4550_98e7_ae0363811980_1 {
             get {
                 object obj = ResourceManager.GetObject("32dcc7d8-2009-4550-98e7-ae0363811980 1", resourceCulture);
+        internal static System.Drawing.Bitmap Doctors {
+            get {
+                object obj = ResourceManager.GetObject("Doctors", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +149,9 @@ namespace To_Do_List.Properties {
         internal static System.Drawing.Bitmap Red_Img {
             get {
                 object obj = ResourceManager.GetObject("Red Img", resourceCulture);
+        internal static System.Drawing.Bitmap Logo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Logo__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
