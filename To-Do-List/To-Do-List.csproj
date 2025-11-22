@@ -62,6 +62,12 @@
     <Compile Include="DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoardView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoardView.Designer.cs">
+      <DependentUpon>DashBoardView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Entities\Activity.cs" />
     <Compile Include="Entities\ActivityStudent.cs" />
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoardView.resx">
+      <DependentUpon>DashBoardView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202511060853140_initCreate.resx">
       <DependentUpon>202511060853140_initCreate.cs</DependentUpon>

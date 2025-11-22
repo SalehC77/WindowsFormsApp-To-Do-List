@@ -42,14 +42,40 @@ namespace To_Do_List
 
         }
 
-        private void staffToolStripMenuItem_Click(object sender, EventArgs e)
+        private void viewRequestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            DashBoardView view = new DashBoardView("StudentNotAccepted");
+            view.ShowDialog();
         }
 
-        private void viewActivitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void viewAllStudentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DashBoardView view = new DashBoardView("StudentAccepted");
+            view.ShowDialog();
+        }
 
+        private void viewDonorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DashBoardView view = new DashBoardView("Donor");
+            view.ShowDialog();
+        }
+
+        private void displayAllStaffsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DashBoardView view = new DashBoardView("Staff");
+            view.ShowDialog();
+        }
+
+        private void viewDontaionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DashBoardView view = new DashBoardView("Donation");
+            view.ShowDialog();
+        }
+
+        private void viewSessionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DashBoardView view = new DashBoardView("Session");
+            view.ShowDialog();
         }
     }
 }
