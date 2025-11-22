@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using To_Do_List.Entities;
+using To_Do_List.Data;
 
 namespace To_Do_List
 {
-    public partial class Form1 : Form
+    internal partial class regesterdonor : Form
     {
-        public Form1()
+        public regesterdonor(User userModel)
         {
             InitializeComponent();
         }

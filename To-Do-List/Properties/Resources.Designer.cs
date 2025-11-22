@@ -63,6 +63,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_co591dco591dco59_1 {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_co591dco591dco59 1", resourceCulture);
         internal static System.Drawing.Bitmap _32dcc7d8_2009_4550_98e7_ae0363811980_1 {
             get {
                 object obj = ResourceManager.GetObject("32dcc7d8-2009-4550-98e7-ae0363811980 1", resourceCulture);
@@ -86,6 +89,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_13 {
+            get {
+                object obj = ResourceManager.GetObject("image 13", resourceCulture);
         internal static System.Drawing.Bitmap Green_img {
             get {
                 object obj = ResourceManager.GetObject("Green img", resourceCulture);
@@ -96,6 +102,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
         internal static System.Drawing.Bitmap heart_1 {
             get {
                 object obj = ResourceManager.GetObject("heart 1", resourceCulture);
@@ -106,6 +115,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap StudentHome {
+            get {
+                object obj = ResourceManager.GetObject("StudentHome", resourceCulture);
         internal static System.Drawing.Bitmap image_10 {
             get {
                 object obj = ResourceManager.GetObject("image 10", resourceCulture);
@@ -116,6 +128,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Untitled_1 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-1", resourceCulture);
         internal static System.Drawing.Bitmap image_11 {
             get {
                 object obj = ResourceManager.GetObject("image 11", resourceCulture);
@@ -126,6 +141,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Untitled_11 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-11", resourceCulture);
         internal static System.Drawing.Bitmap Profile {
             get {
                 object obj = ResourceManager.GetObject("Profile", resourceCulture);
@@ -136,6 +154,9 @@ namespace To_Do_List.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Untitled_12 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-12", resourceCulture);
         internal static System.Drawing.Bitmap read_1 {
             get {
                 object obj = ResourceManager.GetObject("read 1", resourceCulture);

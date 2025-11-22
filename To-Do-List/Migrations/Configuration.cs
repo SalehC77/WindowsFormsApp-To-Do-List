@@ -18,11 +18,20 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
-            context.Roles.Add(new Role { Id = 1, Name = "Admin", Description = "Manages All System Operations" });
-            context.Users.Add(new User { Id = 1, Username = "Saleh", Email = "salehbenjahlan@gmail.com", Password = "774361224", IsActive = true, RoleId = 1 });
-            context.People.Add(new Person { Id = 1, FullName = "Saleh Abdullah omer ali ben jahlan", Age = 21, Gender = true, PhoneNumber = "774361224", Address = "Flak", DateOfBirth = DateTime.Parse("2004/2/4"), UserId = 1 });
+            //context.Roles.AddOrUpdate(
+            //    r => r.Name,
+            //    new Role { Name = "Admin", Description = "Manages All System Operations" }
+            //);
+            context.Users.AddOrUpdate(
+                u => u.Username,
+                new User { Username = "Saleh", Email = "salehbenjahlan@gmail.com", Password = "774361224", IsActive = true, RoleId = 1 }
+            );
+            context.People.AddOrUpdate(
+                p => p.FullName,
+                new Person { FullName = "Saleh Abdullah omer ali ben jahlan", Age = 21, Gender = true, PhoneNumber = "774361224", Address = "Flak", DateOfBirth = DateTime.Parse("2004/2/4"), UserId = 1 }
+            );
             context.SaveChanges();
-
+             
         }
     }
 }
