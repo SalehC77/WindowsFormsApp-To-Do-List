@@ -58,6 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoardView.Designer.cs">
+      <DependentUpon>DashBoardView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="DoctorSession.cs">
       <SubType>Form</SubType>
@@ -90,6 +102,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoardView.resx">
+      <DependentUpon>DashBoardView.cs</DependentUpon>
     <EmbeddedResource Include="DoctorSession.resx">
       <DependentUpon>DoctorSession.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +121,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,6 +145,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Iamges\32dcc7d8-2009-4550-98e7-ae0363811980 1.png" />
+    <Content Include="Iamges\doctor 1.png" />
+    <Content Include="Iamges\Green img.png" />
+    <Content Include="Iamges\heart 1.png" />
+    <Content Include="Iamges\image 10.png" />
+    <Content Include="Iamges\image 11.png" />
+    <Content Include="Iamges\Profile.png" />
+    <Content Include="Iamges\read 1.png" />
+    <Content Include="Iamges\Red Img.png" />
   <ItemGroup>
     <Folder Include="image\" />
   </ItemGroup>
