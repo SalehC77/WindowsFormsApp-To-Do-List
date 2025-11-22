@@ -19,7 +19,7 @@ namespace To_Do_List.Data
         public virtual DbSet<Donor> Donors { get; set; }
         public virtual DbSet<Donation> Donations { get; set; }
         public virtual DbSet<StaffType> StaffTypes { get; set; }
-        public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<StaffForm> Staffs { get; set; }
         public virtual DbSet<Activity> Activities { get; set; }
         public virtual DbSet<ActivityStudent> ActivityStudents { get; set; }
         public virtual DbSet<Session> Sessions { get; set; }
