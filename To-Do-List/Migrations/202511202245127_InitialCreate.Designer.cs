@@ -7,13 +7,13 @@ namespace To_Do_List.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class initCreate : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202511060853140_initCreate"; }
+            get { return "202511202245127_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

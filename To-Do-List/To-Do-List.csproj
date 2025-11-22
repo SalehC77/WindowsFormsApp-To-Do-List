@@ -43,6 +43,7 @@
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -58,6 +59,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="baseRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="baseRegister.Designer.cs">
+      <DependentUpon>baseRegister.cs</DependentUpon>
+    <Compile Include="DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoardView.Designer.cs">
+      <DependentUpon>DashBoardView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="DoctorSession.cs">
       <SubType>Form</SubType>
@@ -77,17 +95,23 @@
     <Compile Include="Entities\StaffType.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202511060853140_initCreate.cs" />
-    <Compile Include="Migrations\202511060853140_initCreate.Designer.cs">
-      <DependentUpon>202511060853140_initCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202511202245127_InitialCreate.cs" />
+    <Compile Include="Migrations\202511202245127_InitialCreate.Designer.cs">
+      <DependentUpon>202511202245127_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm.Designer.cs">
+      <DependentUpon>ParentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff.cs">
@@ -96,6 +120,46 @@
     <Compile Include="Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="regesterdonor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="regesterdonor.Designer.cs">
+      <DependentUpon>regesterdonor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Home.Designer.cs">
+      <DependentUpon>Student_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Register.Designer.cs">
+      <DependentUpon>Student_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewActivites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewActivites.Designer.cs">
+      <DependentUpon>ViewActivites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewDoctors.Designer.cs">
+      <DependentUpon>viewDoctors.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="baseRegister.resx">
+      <DependentUpon>baseRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202511202245127_InitialCreate.resx">
+      <DependentUpon>202511202245127_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoardView.resx">
+      <DependentUpon>DashBoardView.cs</DependentUpon>
     <EmbeddedResource Include="DoctorSession.resx">
       <DependentUpon>DoctorSession.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +176,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Student_Home.resx">
+      <DependentUpon>Student_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Register.resx">
+      <DependentUpon>Student_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewActivites.resx">
+      <DependentUpon>ViewActivites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewDoctors.resx">
+      <DependentUpon>viewDoctors.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -132,6 +212,37 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_co591dco591dco59 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StudentHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.jpg" />
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Iamges\32dcc7d8-2009-4550-98e7-ae0363811980 1.png" />
+    <Content Include="Iamges\doctor 1.png" />
+    <Content Include="Iamges\Green img.png" />
+    <Content Include="Iamges\heart 1.png" />
+    <Content Include="Iamges\image 10.png" />
+    <Content Include="Iamges\image 11.png" />
+    <Content Include="Iamges\Profile.png" />
+    <Content Include="Iamges\read 1.png" />
+    <Content Include="Iamges\Red Img.png" />
   <ItemGroup>
     <Folder Include="image\" />
   </ItemGroup>

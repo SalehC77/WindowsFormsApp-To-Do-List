@@ -15,7 +15,7 @@ namespace To_Do_List.Entities
         public Student Student { get; set; }
 
         public DateTime SessionDate { get; set; }
-        public DateTime DurationMinutes { get; set; }
+        public int DurationMinutes { get; set; }
         public decimal Price { get; set; }
         public string Notes { get; set; }
 
