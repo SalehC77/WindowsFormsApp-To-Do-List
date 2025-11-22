@@ -90,8 +90,8 @@ namespace To_Do_List
                 userModel.Username = username_textBox.Text.Trim();
                 userModel.Email = email_textBox.Text.Trim();
                 userModel.Password = password_textBox.Text;
-                userModel.Role = db.Roles.FirstOrDefault(r => r.Name == role_comboBox.Text);
-                userModel.IsActive = true;
+                var role = db.Roles
+                             .FirstOrDefault(r => r.Name.Equals(role_comboBox.Text.Trim(), StringComparison.OrdinalIgnoreCase)); userModel.IsActive = true;
 
                 db.Users.Add(userModel);
                 db.SaveChanges();
