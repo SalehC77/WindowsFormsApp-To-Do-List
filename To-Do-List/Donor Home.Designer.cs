@@ -40,12 +40,13 @@
             this.label_date_brith = new System.Windows.Forms.Label();
             this.label_phone = new System.Windows.Forms.Label();
             this.label_address = new System.Windows.Forms.Label();
-            this.picture1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.title = new System.Windows.Forms.Label();
+            this.picture_logo = new System.Windows.Forms.PictureBox();
+            this.picture1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -175,6 +176,26 @@
             this.label_address.TabIndex = 11;
             this.label_address.Text = " Address:";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.picture_logo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1083, 47);
+            this.panel1.TabIndex = 0;
+            // 
+            // picture_logo
+            // 
+            this.picture_logo.Image = global::To_Do_List.Properties.Resources.Logo;
+            this.picture_logo.Location = new System.Drawing.Point(40, 12);
+            this.picture_logo.Name = "picture_logo";
+            this.picture_logo.Size = new System.Drawing.Size(156, 23);
+            this.picture_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_logo.TabIndex = 13;
+            this.picture_logo.TabStop = false;
+            // 
             // picture1
             // 
             this.picture1.Image = global::To_Do_List.Properties.Resources.DONOR;
@@ -184,28 +205,6 @@
             this.picture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture1.TabIndex = 12;
             this.picture1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.title);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1083, 47);
-            this.panel1.TabIndex = 0;
-            // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.title.Location = new System.Drawing.Point(35, 9);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(125, 29);
-            this.title.TabIndex = 14;
-            this.title.Text = "Tamkken";
-            this.title.Click += new System.EventHandler(this.title_Click_1);
             // 
             // Donor_Home
             // 
@@ -228,9 +227,9 @@
             this.Load += new System.EventHandler(this.Donor_Home_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,6 +250,6 @@
         private System.Windows.Forms.Label label_address;
         private System.Windows.Forms.PictureBox picture1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.PictureBox picture_logo;
     }
 }

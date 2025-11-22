@@ -41,16 +41,17 @@
             this.comboBox_payment_method = new System.Windows.Forms.ComboBox();
             this.button_donate = new System.Windows.Forms.Button();
             this.button_clear = new System.Windows.Forms.Button();
-            this.picture1 = new System.Windows.Forms.PictureBox();
             this.label_donation = new System.Windows.Forms.Label();
             this.label_purpose = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label_donation_date = new System.Windows.Forms.Label();
             this.richTextBox_purpose = new System.Windows.Forms.RichTextBox();
-            this.title = new System.Windows.Forms.Label();
+            this.picture1 = new System.Windows.Forms.PictureBox();
+            this.picture_logo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -102,7 +103,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.title);
+            this.panel1.Controls.Add(this.picture_logo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -195,16 +196,6 @@
             this.button_clear.UseVisualStyleBackColor = true;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
-            // picture1
-            // 
-            this.picture1.Image = global::To_Do_List.Properties.Resources.Donate;
-            this.picture1.Location = new System.Drawing.Point(431, 477);
-            this.picture1.Name = "picture1";
-            this.picture1.Size = new System.Drawing.Size(398, 357);
-            this.picture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picture1.TabIndex = 15;
-            this.picture1.TabStop = false;
-            // 
             // label_donation
             // 
             this.label_donation.AutoSize = true;
@@ -251,16 +242,25 @@
             this.richTextBox_purpose.TabIndex = 21;
             this.richTextBox_purpose.Text = "";
             // 
-            // title
+            // picture1
             // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.title.Location = new System.Drawing.Point(35, 9);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(125, 29);
-            this.title.TabIndex = 14;
-            this.title.Text = "Tamkken";
+            this.picture1.Image = global::To_Do_List.Properties.Resources.Donate;
+            this.picture1.Location = new System.Drawing.Point(431, 477);
+            this.picture1.Name = "picture1";
+            this.picture1.Size = new System.Drawing.Size(398, 357);
+            this.picture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture1.TabIndex = 15;
+            this.picture1.TabStop = false;
+            // 
+            // picture_logo
+            // 
+            this.picture_logo.Image = global::To_Do_List.Properties.Resources.Logo;
+            this.picture_logo.Location = new System.Drawing.Point(40, 12);
+            this.picture_logo.Name = "picture_logo";
+            this.picture_logo.Size = new System.Drawing.Size(156, 23);
+            this.picture_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_logo.TabIndex = 22;
+            this.picture_logo.TabStop = false;
             // 
             // Donation_Page
             // 
@@ -289,8 +289,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,6 +317,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label_donation_date;
         private System.Windows.Forms.RichTextBox richTextBox_purpose;
-        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.PictureBox picture_logo;
     }
 }
