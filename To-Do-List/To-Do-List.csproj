@@ -103,11 +103,14 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Login.cs">
+		<SubType>Form</SubType>
+	</Compile>
     <Compile Include="Donor Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+	</Compile>
     <Compile Include="Donor Home.Designer.cs">
       <DependentUpon>Donor Home.cs</DependentUpon>
     </Compile>
