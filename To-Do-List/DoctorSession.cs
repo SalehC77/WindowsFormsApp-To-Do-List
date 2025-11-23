@@ -15,12 +15,12 @@ namespace To_Do_List
     public partial class DoctorSession : Form
     {
         private readonly ApplicationDbContext _db;
-        private readonly int _doctorId;
+        private readonly int _StaffId;
 
-        public DoctorSession()
+        public DoctorSession(int staffId)
         {
             InitializeComponent();
-            _doctorId = staffId;
+            _StaffId = staffId;
             _db = new ApplicationDbContext();
 
         }
@@ -33,7 +33,7 @@ namespace To_Do_List
         private void LoadDoctorSession()
         {
             var data = _db.Sessions
-                .Where( s => s.StaffId == _doctorId)
+                .Where( s => s.StaffId == _StaffId)
                 .Include(s => s.Student)
                 .OrderBy( s => s.SessionDate)
                 .Select( s => new

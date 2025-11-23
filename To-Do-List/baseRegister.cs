@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using To_Do_List.Data;
 using To_Do_List.Entities;
 
@@ -27,7 +23,7 @@ namespace To_Do_List
             role_comboBox.Items.AddRange(
                db.Roles
                    .Where(r => !r.Name.Equals("doctor", StringComparison.OrdinalIgnoreCase)
-                               &&!r.Name.Equals("admin", StringComparison.OrdinalIgnoreCase)
+                               && !r.Name.Equals("admin", StringComparison.OrdinalIgnoreCase)
                    )
                    .Select(r => r.Name).ToArray()
            );

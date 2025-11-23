@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initCreate : DbMigration
     {
         public override void Up()
         {
@@ -21,7 +21,7 @@
                         DisabilityTypeId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.DisabilityTypes", t => t.DisabilityTypeId, cascadeDelete: false)
+                .ForeignKey("dbo.DisabilityTypes", t => t.DisabilityTypeId, cascadeDelete: true)
                 .Index(t => t.DisabilityTypeId);
             
             CreateTable(
@@ -36,8 +36,8 @@
                         Notes = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Activities", t => t.ActivityId, cascadeDelete: false)
-                .ForeignKey("dbo.Students", t => t.StudentId, cascadeDelete: false)
+                .ForeignKey("dbo.Activities", t => t.ActivityId, cascadeDelete: true)
+                .ForeignKey("dbo.Students", t => t.StudentId, cascadeDelete: true)
                 .Index(t => t.StudentId)
                 .Index(t => t.ActivityId);
             
@@ -53,7 +53,7 @@
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.DisabilityTypes", t => t.DisabilityTypeId, cascadeDelete: false)
-                .ForeignKey("dbo.People", t => t.PersonId, cascadeDelete: false)
+                .ForeignKey("dbo.People", t => t.PersonId, cascadeDelete: true)
                 .Index(t => t.PersonId)
                 .Index(t => t.DisabilityTypeId);
             
@@ -80,7 +80,7 @@
                         UserId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: false)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
             CreateTable(
@@ -95,7 +95,7 @@
                         RoleId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Roles", t => t.RoleId, cascadeDelete: false)
+                .ForeignKey("dbo.Roles", t => t.RoleId, cascadeDelete: true)
                 .Index(t => t.RoleId);
             
             CreateTable(
@@ -116,13 +116,13 @@
                         StaffId = c.Int(nullable: false),
                         StudentId = c.Int(nullable: false),
                         SessionDate = c.DateTime(nullable: false),
-                        DurationMinutes = c.Int(nullable: false),
+                        DurationMinutes = c.DateTime(nullable: false),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Notes = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Staffs", t => t.StaffId, cascadeDelete: false)
-                .ForeignKey("dbo.Students", t => t.StudentId, cascadeDelete: false)
+                .ForeignKey("dbo.Staffs", t => t.StaffId, cascadeDelete: true)
+                .ForeignKey("dbo.Students", t => t.StudentId, cascadeDelete: true)
                 .Index(t => t.StaffId)
                 .Index(t => t.StudentId);
             
@@ -142,7 +142,7 @@
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.People", t => t.PersonId, cascadeDelete: false)
-                .ForeignKey("dbo.StaffTypes", t => t.StaffTypeId, cascadeDelete: false)
+                .ForeignKey("dbo.StaffTypes", t => t.StaffTypeId, cascadeDelete: true)
                 .Index(t => t.PersonId)
                 .Index(t => t.StaffTypeId);
             
@@ -169,7 +169,7 @@
                         Purpose = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Donors", t => t.DonorId, cascadeDelete: false)
+                .ForeignKey("dbo.Donors", t => t.DonorId, cascadeDelete: true)
                 .Index(t => t.DonorId);
             
             CreateTable(
@@ -180,7 +180,7 @@
                         PersonId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.People", t => t.PersonId, cascadeDelete: false)
+                .ForeignKey("dbo.People", t => t.PersonId, cascadeDelete: true)
                 .Index(t => t.PersonId);
             
         }

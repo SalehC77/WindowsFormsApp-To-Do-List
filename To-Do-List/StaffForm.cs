@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace To_Do_List
 {
-    public partial class Staff : Form
+    public partial class StaffForm : Form
     {
-        public Staff()
+        public StaffForm()
         {
             InitializeComponent();
         }

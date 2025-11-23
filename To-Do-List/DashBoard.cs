@@ -35,7 +35,7 @@ namespace To_Do_List
             StaffsCount.Text = _context.Staffs.Count().ToString();
             SeetionsAmount.Text = "$ "+_context.Sessions.Sum(s => s.Price).ToString();
             DonationsAmounts.Text = "$ "+ _context.Donations.Sum(d => d.Amount).ToString();
-            StaffsSalaries.Text = "$ "+ _context.Staffs.Sum(d => d.Salary).ToString();
+            StaffsSalaries.Text = "$ "+ _context.Staffs.Sum(s => s.Salary).ToString();
             ActivitiesDone.Text = _context.Activities.Count(a => a.ExpirationDate < DateTime.UtcNow).ToString();
             CurrentActivities.Text = _context.Activities.Count(a => a.ExpirationDate > DateTime.UtcNow).ToString();
             StudentRequest.Text = _context.Students.Count(s => s.IsAccept == false).ToString();

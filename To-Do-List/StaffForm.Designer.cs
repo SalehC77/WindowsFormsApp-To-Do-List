@@ -1,6 +1,6 @@
 ﻿namespace To_Do_List
 {
-    partial class Staff
+    partial class StaffForm
     {
         /// <summary>
         /// Required designer variable.
