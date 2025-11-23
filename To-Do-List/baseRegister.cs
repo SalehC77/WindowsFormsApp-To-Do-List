@@ -91,7 +91,8 @@ namespace To_Do_List
                 userModel.Email = email_textBox.Text.Trim();
                 userModel.Password = password_textBox.Text;
                 var role = db.Roles
-                             .FirstOrDefault(r => r.Name.Equals(role_comboBox.Text.Trim(), StringComparison.OrdinalIgnoreCase)); userModel.IsActive = true;
+                             .FirstOrDefault(r => r.Name.Equals(role_comboBox.Text.Trim(), StringComparison.OrdinalIgnoreCase));
+                userModel.IsActive = true;
 
                 db.Users.Add(userModel);
                 db.SaveChanges();
