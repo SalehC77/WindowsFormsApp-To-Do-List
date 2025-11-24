@@ -14,20 +14,23 @@ namespace To_Do_List
 {
     internal partial class ViewActivites : ParentForm
     {
-        ApplicationDbContext db = new ApplicationDbContext();
-        Person currentPerson;
+        ApplicationDbContext _db = new ApplicationDbContext();
+        Person _currentPerson;
+        private readonly User _User;
 
-        public ViewActivites(Person currentPerson)
+        public ViewActivites(User user)
         {
-            this.currentPerson = currentPerson;
+            _User = user;
+            _currentPerson = _db.People.FirstOrDefault(p => p.UserId == user.Id);
+            
             InitializeComponent();
             InitializeNotesPlaceholder();
             this.FormClosed += ViewActivites_FormClosed;
-            var currentDisability = db.Students.Where(s => s.PersonId == currentPerson.Id)
+            var currentDisability = _db.Students.Where(s => s.PersonId == _currentPerson.Id)
                                        .Select(s => s.DisabilityType.Id)
                                        .FirstOrDefault();
            
-            var activities = db.Activities.Where(a => a.DisabilityTypeId == currentDisability)
+            var activities = _db.Activities.Where(a => a.DisabilityTypeId == currentDisability)
                 .Select(a => new
                 {
                     a.Id,
@@ -60,20 +63,20 @@ namespace To_Do_List
             {
                 
                 var actId = Convert.ToInt32(row.Cells[0].Value);
-                var currentActivity = db.Activities.FirstOrDefault(a => a.Id == actId);
-                var studentCount = db.ActivityStudents.Count(s => s.ActivityId == currentActivity.Id);
+                var currentActivity = _db.Activities.FirstOrDefault(a => a.Id == actId);
+                var studentCount = _db.ActivityStudents.Count(s => s.ActivityId == currentActivity.Id);
                 var accept = studentCount < currentActivity.NumberOfPeopleAllowed ;
 
-                var currentStudent = db.Students.FirstOrDefault(s => s.PersonId == currentPerson.Id);
+                var currentStudent = _db.Students.FirstOrDefault(s => s.PersonId == _currentPerson.Id);
 
-                bool isRegistered = db.ActivityStudents
+                bool isRegistered = _db.ActivityStudents
                       .Any(a => a.StudentId == currentStudent.Id && a.ActivityId == actId);
                 if (isRegistered)
                 {
                     MessageBox.Show($"You have already registered for activity {currentActivity.Name}.");
                     continue;
                 }
-                db.ActivityStudents.Add(new ActivityStudent
+                _db.ActivityStudents.Add(new ActivityStudent
                 {
                     StudentId = currentStudent.Id,
                     Student = currentStudent,
@@ -83,7 +86,7 @@ namespace To_Do_List
                     RegistrationDate = DateTime.Now,
                     Notes = IsNotesValid() ? notes_richTextBox.Text : ""
                 });
-                db.SaveChanges();
+                _db.SaveChanges();
                 MessageBox.Show(accept ? "Registration successful!" : $"You have been added to the {currentActivity.Name} activity list.");
             }
             notes_richTextBox.Text = notesPlaceholder;
@@ -91,13 +94,13 @@ namespace To_Do_List
         private void viewDoctors_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            new viewDoctors(currentPerson).Show();
+            new viewDoctors(_User).Show();
         }
 
         private void logOut_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            new Login().Show();
+            new login().Show();
         }
 
         private string notesPlaceholder = "Enter your notes here...";
@@ -131,7 +134,7 @@ namespace To_Do_List
         }
         private void ViewActivites_FormClosed(object sender, FormClosedEventArgs e)
         {
-            db.Dispose();
+            _db.Dispose();
         }
     }
 }

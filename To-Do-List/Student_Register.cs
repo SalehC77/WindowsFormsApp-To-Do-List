@@ -126,14 +126,19 @@ namespace To_Do_List
 
             studentModel.DisabilityType = disability;
             studentModel.DisabilityTypeId = disability.Id;
-            studentModel.IsAccept = true;
+            studentModel.IsAccept = false;
 
             db.Students.Add(studentModel);
 
             db.SaveChanges();
-
+            MessageBox.Show("Registration Successful! Awaiting To Accept Your Request From Admin.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
-            new Student_Home(personModel).Show();
+            //new Student_Home(personModel).Show();
+        }
+
+        private void Student_Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,6 +12,7 @@ namespace To_Do_List.Entities
         
         public int PersonId { get; set; }
         public Person Person { get; set; }
+
         public ICollection<Donation> Donations { get; set; }
     }
 }

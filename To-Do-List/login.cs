@@ -87,17 +87,17 @@ namespace To_Do_List
 
             if (role == "admin")
             {
-                DashBoard dashBoard = new DashBoard(user.Id);
-                dashBoard.ShowDialog();
-            //*    new AdminDashboard(user).Show();   
+                
+                new DashBoard(user).Show();
+                //*    new AdminDashboard(user).Show();   
             }
             else if (role == "student")
             {
-          //*      new StudentHome(user).Show();     
+                new Student_Home(user).Show();     
             }
             else if (role == "doctor")
             {
-             //*   new DoctorHome(user).Show();       
+               new DoctorSession(user).Show();       
             }
             else if (role == "donor")
             {
@@ -111,7 +111,8 @@ namespace To_Do_List
         
         private void Createansccount_Click(object sender, EventArgs e)
         {
-
+            baseRegister baseRegister = new baseRegister();
+            baseRegister.ShowDialog();
         }
 
         private void textBoxUsername_TextChanged(object sender, EventArgs e)

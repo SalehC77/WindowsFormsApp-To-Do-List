@@ -11,8 +11,8 @@ namespace To_Do_List
 {
     public partial class baseRegister : ParentForm
     {
-        ApplicationDbContext db = new ApplicationDbContext();
-        User userModel = new User();
+        ApplicationDbContext _db = new ApplicationDbContext();
+        User _userModel = new User();
         public baseRegister()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace To_Do_List
             role_comboBox.Items.Add("Select Role");
             role_comboBox.SelectedIndex = 0;
             role_comboBox.Items.AddRange(
-               db.Roles
+               _db.Roles
                    .Where(r => !r.Name.Equals("doctor", StringComparison.OrdinalIgnoreCase)
                                && !r.Name.Equals("admin", StringComparison.OrdinalIgnoreCase)
                    )
@@ -83,30 +83,36 @@ namespace To_Do_List
         {
             if (ValidateForm(out string errors))
             {
-                userModel.Username = username_textBox.Text.Trim();
-                userModel.Email = email_textBox.Text.Trim();
-                userModel.Password = password_textBox.Text;
-                var role = db.Roles
-                             .FirstOrDefault(r => r.Name.Equals(role_comboBox.Text.Trim(), StringComparison.OrdinalIgnoreCase)); userModel.IsActive = true;
-
-                db.Users.Add(userModel);
-                db.SaveChanges();
-
-                if (userModel.Role.Name == "student")
+                _userModel.Username = username_textBox.Text.Trim();
+                _userModel.Email = email_textBox.Text.Trim();
+                _userModel.Password = password_textBox.Text;
+                var role = _db.Roles
+                             .FirstOrDefault(r => r.Name.Equals(role_comboBox.Text.Trim(), StringComparison.OrdinalIgnoreCase));
+                _userModel.IsActive = true;
+                _userModel.RoleId = role.Id;
+                _db.Users.Add(_userModel);
+                _db.SaveChanges();
+                var RoleName = role.Name.ToLower();
+                if (RoleName == "student")
                 {
                     this.Hide();
-                    new Student_Register(userModel).Show();
+                    new Student_Register(_userModel).Show();
                 }
-                else if (userModel.Role.Name == "donor")
+                else if (RoleName == "donor")
                 {
                     this.Close();
-                    new regesterdonor(userModel).Show();
+                    new regesterdonor(_userModel).Show();
                 }
             }
             else
             {
                 MessageBox.Show("Please fix the following errors:\n" + errors);
             }
+        }
+
+        private void baseRegister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

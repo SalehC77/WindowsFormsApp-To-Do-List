@@ -18,5 +18,10 @@ namespace To_Do_List
         {
             InitializeComponent();
         }
+
+        private void regesterdonor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

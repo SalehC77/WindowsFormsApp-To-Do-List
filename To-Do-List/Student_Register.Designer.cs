@@ -46,49 +46,54 @@
             // 
             this.name_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.name_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_textBox.Location = new System.Drawing.Point(386, 91);
+            this.name_textBox.Location = new System.Drawing.Point(496, 108);
+            this.name_textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.name_textBox.Multiline = true;
             this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(182, 30);
+            this.name_textBox.Size = new System.Drawing.Size(234, 36);
             this.name_textBox.TabIndex = 3;
             // 
             // stage_textBox
             // 
             this.stage_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.stage_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.stage_textBox.Location = new System.Drawing.Point(386, 273);
+            this.stage_textBox.Location = new System.Drawing.Point(496, 324);
+            this.stage_textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stage_textBox.Multiline = true;
             this.stage_textBox.Name = "stage_textBox";
-            this.stage_textBox.Size = new System.Drawing.Size(182, 30);
+            this.stage_textBox.Size = new System.Drawing.Size(234, 36);
             this.stage_textBox.TabIndex = 5;
             // 
             // phone_textBox
             // 
             this.phone_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.phone_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phone_textBox.Location = new System.Drawing.Point(386, 179);
+            this.phone_textBox.Location = new System.Drawing.Point(496, 213);
+            this.phone_textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phone_textBox.Multiline = true;
             this.phone_textBox.Name = "phone_textBox";
-            this.phone_textBox.Size = new System.Drawing.Size(182, 30);
+            this.phone_textBox.Size = new System.Drawing.Size(234, 36);
             this.phone_textBox.TabIndex = 6;
             // 
             // Address_textBox
             // 
             this.Address_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.Address_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Address_textBox.Location = new System.Drawing.Point(386, 226);
+            this.Address_textBox.Location = new System.Drawing.Point(496, 268);
+            this.Address_textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Address_textBox.Multiline = true;
             this.Address_textBox.Name = "Address_textBox";
-            this.Address_textBox.Size = new System.Drawing.Size(182, 30);
+            this.Address_textBox.Size = new System.Drawing.Size(234, 36);
             this.Address_textBox.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(370, 50);
+            this.label1.Location = new System.Drawing.Point(476, 59);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 24);
+            this.label1.Size = new System.Drawing.Size(260, 29);
             this.label1.TabIndex = 10;
             this.label1.Text = "Register As A Student :";
             // 
@@ -98,9 +103,10 @@
             this.RegisterButton.FlatAppearance.BorderSize = 0;
             this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterButton.ForeColor = System.Drawing.Color.White;
-            this.RegisterButton.Location = new System.Drawing.Point(473, 405);
+            this.RegisterButton.Location = new System.Drawing.Point(608, 481);
+            this.RegisterButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(95, 30);
+            this.RegisterButton.Size = new System.Drawing.Size(122, 36);
             this.RegisterButton.TabIndex = 11;
             this.RegisterButton.Text = "Register";
             this.RegisterButton.UseVisualStyleBackColor = false;
@@ -115,16 +121,18 @@
             "choose your gender",
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(386, 138);
+            this.genderComboBox.Location = new System.Drawing.Point(496, 164);
+            this.genderComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.Size = new System.Drawing.Size(182, 24);
+            this.genderComboBox.Size = new System.Drawing.Size(233, 27);
             this.genderComboBox.TabIndex = 12;
             // 
             // DateOfBirth_DateTimePicker
             // 
-            this.DateOfBirth_DateTimePicker.Location = new System.Drawing.Point(386, 365);
+            this.DateOfBirth_DateTimePicker.Location = new System.Drawing.Point(496, 433);
+            this.DateOfBirth_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DateOfBirth_DateTimePicker.Name = "DateOfBirth_DateTimePicker";
-            this.DateOfBirth_DateTimePicker.Size = new System.Drawing.Size(182, 24);
+            this.DateOfBirth_DateTimePicker.Size = new System.Drawing.Size(233, 27);
             this.DateOfBirth_DateTimePicker.TabIndex = 13;
             // 
             // disability_comboBox
@@ -134,18 +142,20 @@
             this.disability_comboBox.FormattingEnabled = true;
             this.disability_comboBox.Items.AddRange(new object[] {
             ""});
-            this.disability_comboBox.Location = new System.Drawing.Point(386, 320);
+            this.disability_comboBox.Location = new System.Drawing.Point(496, 380);
+            this.disability_comboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.disability_comboBox.Name = "disability_comboBox";
-            this.disability_comboBox.Size = new System.Drawing.Size(182, 24);
+            this.disability_comboBox.Size = new System.Drawing.Size(233, 27);
             this.disability_comboBox.TabIndex = 14;
             // 
             // navbarPanel
             // 
             this.navbarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(67)))), ((int)(((byte)(229)))));
             this.navbarPanel.Controls.Add(this.logOut_linkLabel);
-            this.navbarPanel.Location = new System.Drawing.Point(0, 50);
+            this.navbarPanel.Location = new System.Drawing.Point(0, 59);
+            this.navbarPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navbarPanel.Name = "navbarPanel";
-            this.navbarPanel.Size = new System.Drawing.Size(154, 407);
+            this.navbarPanel.Size = new System.Drawing.Size(198, 483);
             this.navbarPanel.TabIndex = 15;
             // 
             // logOut_linkLabel
@@ -155,18 +165,19 @@
             this.logOut_linkLabel.Font = new System.Drawing.Font("Tahoma", 16F);
             this.logOut_linkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.logOut_linkLabel.LinkColor = System.Drawing.Color.White;
-            this.logOut_linkLabel.Location = new System.Drawing.Point(8, 36);
+            this.logOut_linkLabel.Location = new System.Drawing.Point(10, 43);
+            this.logOut_linkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.logOut_linkLabel.Name = "logOut_linkLabel";
-            this.logOut_linkLabel.Size = new System.Drawing.Size(139, 132);
+            this.logOut_linkLabel.Size = new System.Drawing.Size(165, 156);
             this.logOut_linkLabel.TabIndex = 6;
             this.logOut_linkLabel.TabStop = true;
             this.logOut_linkLabel.Text = "Welcome\r\nto Center\r\nfor Special\r\nNeeds !";
             // 
             // Student_Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1029, 534);
             this.Controls.Add(this.navbarPanel);
             this.Controls.Add(this.disability_comboBox);
             this.Controls.Add(this.DateOfBirth_DateTimePicker);
@@ -178,8 +189,10 @@
             this.Controls.Add(this.stage_textBox);
             this.Controls.Add(this.name_textBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "Student_Register";
             this.Text = "Student_Register";
+            this.Load += new System.EventHandler(this.Student_Register_Load);
             this.Controls.SetChildIndex(this.name_textBox, 0);
             this.Controls.SetChildIndex(this.stage_textBox, 0);
             this.Controls.SetChildIndex(this.phone_textBox, 0);

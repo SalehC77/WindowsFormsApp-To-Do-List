@@ -15,11 +15,12 @@ namespace To_Do_List
     internal partial class DashBoard : Form
     {
         private readonly ApplicationDbContext _context;
-        private readonly int _UserId;
-        internal DashBoard(int UserId)
+       
+        private readonly User _User;
+        internal DashBoard(User User)
         {
             _context = new ApplicationDbContext();
-            _UserId = UserId;
+            _User = User;
             InitializeComponent();
         }
 
@@ -29,7 +30,7 @@ namespace To_Do_List
         }
         private void LoadData() 
         {
-            Label_UserName.Text = "Hello " + _context.Users.FirstOrDefault(u => u.Id == _UserId).Username;
+            Label_UserName.Text = "Hello " + _User.Username;
             StudentsCount.Text = _context.Students.Count(s => s.IsAccept == true).ToString();
             DonorsCount.Text = _context.Donors.Count().ToString();
             StaffsCount.Text = _context.Staffs.Count().ToString();

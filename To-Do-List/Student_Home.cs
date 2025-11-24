@@ -13,26 +13,31 @@ namespace To_Do_List
 {
     internal partial class Student_Home : ParentForm
     {
-        Person currentPerson;
-        public Student_Home(Person currentPerson)
+        private readonly User _User;
+        public Student_Home(User user)
         {
-            this.currentPerson = currentPerson;
+            this._User = user;
             InitializeComponent();
         }
         private void viewDoctors_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            new viewDoctors(currentPerson).Show();
+            new viewDoctors(_User).Show();
         }
         private void viewActivities_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            new ViewActivites(currentPerson).Show();
+            new ViewActivites(_User).Show();
         }
         private void logOut_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            new Login().Show();
+            new login().Show();
+        }
+
+        private void Student_Home_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

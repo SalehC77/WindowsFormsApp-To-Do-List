@@ -9,18 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using To_Do_List.Data;
 using System.Data.Entity;
+using To_Do_List.Entities;
 
 namespace To_Do_List
 {
-    public partial class DoctorSession : Form
+    internal partial class DoctorSession : Form
     {
         private readonly ApplicationDbContext _db;
         private readonly int _StaffId;
+        private readonly Staff _Staff;
 
-        public DoctorSession(int staffId)
+        public DoctorSession(User user)
         {
             InitializeComponent();
-            _StaffId = staffId;
+            _Staff = _db.Staffs.Include(s => s.Person).FirstOrDefault(s => s.Person.UserId == user.Id);
+            _StaffId = _Staff.Id;
             _db = new ApplicationDbContext();
 
         }
@@ -33,18 +36,20 @@ namespace To_Do_List
         private void LoadDoctorSession()
         {
             var data = _db.Sessions
-                .Where( s => s.StaffId == _StaffId)
+                .Where(s => s.StaffId == _StaffId)
                 .Include(s => s.Student)
-                .OrderBy( s => s.SessionDate)
-                .Select( s => new
+                .Include(s => s.Student.Person)
+                .OrderBy(s => s.SessionDate)
+                .Select(s => new
                 {
                     s.SessionDate,
                     s.DurationMinutes,
                     s.Price,
                     s.Notes,
-                    StudentName = s.Student.Person.FullName 
+                    StudentName = s.Student.Person.FullName
                 }).ToList();
 
+            
             dgvdoctor.AutoGenerateColumns = true;
             dgvdoctor.DataSource = data;
         }

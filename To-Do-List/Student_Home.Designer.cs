@@ -42,9 +42,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::To_Do_List.Properties.Resources.StudentHome;
-            this.pictureBox1.Location = new System.Drawing.Point(262, 88);
+            this.pictureBox1.Location = new System.Drawing.Point(337, 104);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(421, 407);
+            this.pictureBox1.Size = new System.Drawing.Size(541, 483);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -53,9 +54,10 @@
             // 
             this.welcome_label.AutoSize = true;
             this.welcome_label.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome_label.Location = new System.Drawing.Point(174, 64);
+            this.welcome_label.Location = new System.Drawing.Point(224, 76);
+            this.welcome_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.welcome_label.Name = "welcome_label";
-            this.welcome_label.Size = new System.Drawing.Size(210, 21);
+            this.welcome_label.Size = new System.Drawing.Size(258, 25);
             this.welcome_label.TabIndex = 3;
             this.welcome_label.Text = "Welcome, mohammed !";
             // 
@@ -63,9 +65,10 @@
             // 
             this.intro_label.AutoSize = true;
             this.intro_label.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.intro_label.Location = new System.Drawing.Point(174, 88);
+            this.intro_label.Location = new System.Drawing.Point(224, 104);
+            this.intro_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.intro_label.Name = "intro_label";
-            this.intro_label.Size = new System.Drawing.Size(529, 21);
+            this.intro_label.Size = new System.Drawing.Size(636, 24);
             this.intro_label.TabIndex = 4;
             this.intro_label.Text = "Manage your appointments, explore activities, and view doctors easily";
             // 
@@ -76,9 +79,10 @@
             this.viewDoctors_LinkLabel.ForeColor = System.Drawing.Color.White;
             this.viewDoctors_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.viewDoctors_LinkLabel.LinkColor = System.Drawing.Color.White;
-            this.viewDoctors_LinkLabel.Location = new System.Drawing.Point(33, 18);
+            this.viewDoctors_LinkLabel.Location = new System.Drawing.Point(42, 21);
+            this.viewDoctors_LinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.viewDoctors_LinkLabel.Name = "viewDoctors_LinkLabel";
-            this.viewDoctors_LinkLabel.Size = new System.Drawing.Size(88, 17);
+            this.viewDoctors_LinkLabel.Size = new System.Drawing.Size(102, 19);
             this.viewDoctors_LinkLabel.TabIndex = 5;
             this.viewDoctors_LinkLabel.TabStop = true;
             this.viewDoctors_LinkLabel.Text = "View Doctors";
@@ -90,9 +94,10 @@
             this.navbarPanel.Controls.Add(this.viewActivities_LinkLabel);
             this.navbarPanel.Controls.Add(this.viewDoctors_LinkLabel);
             this.navbarPanel.Controls.Add(this.logOut_linkLabel);
-            this.navbarPanel.Location = new System.Drawing.Point(0, 50);
+            this.navbarPanel.Location = new System.Drawing.Point(0, 59);
+            this.navbarPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navbarPanel.Name = "navbarPanel";
-            this.navbarPanel.Size = new System.Drawing.Size(154, 407);
+            this.navbarPanel.Size = new System.Drawing.Size(198, 483);
             this.navbarPanel.TabIndex = 1;
             // 
             // viewActivities_LinkLabel
@@ -101,9 +106,10 @@
             this.viewActivities_LinkLabel.AutoSize = true;
             this.viewActivities_LinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.viewActivities_LinkLabel.LinkColor = System.Drawing.Color.White;
-            this.viewActivities_LinkLabel.Location = new System.Drawing.Point(32, 57);
+            this.viewActivities_LinkLabel.Location = new System.Drawing.Point(41, 68);
+            this.viewActivities_LinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.viewActivities_LinkLabel.Name = "viewActivities_LinkLabel";
-            this.viewActivities_LinkLabel.Size = new System.Drawing.Size(91, 17);
+            this.viewActivities_LinkLabel.Size = new System.Drawing.Size(111, 19);
             this.viewActivities_LinkLabel.TabIndex = 7;
             this.viewActivities_LinkLabel.TabStop = true;
             this.viewActivities_LinkLabel.Text = "View Activities";
@@ -115,9 +121,10 @@
             this.logOut_linkLabel.AutoSize = true;
             this.logOut_linkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.logOut_linkLabel.LinkColor = System.Drawing.Color.White;
-            this.logOut_linkLabel.Location = new System.Drawing.Point(48, 96);
+            this.logOut_linkLabel.Location = new System.Drawing.Point(62, 114);
+            this.logOut_linkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.logOut_linkLabel.Name = "logOut_linkLabel";
-            this.logOut_linkLabel.Size = new System.Drawing.Size(58, 17);
+            this.logOut_linkLabel.Size = new System.Drawing.Size(66, 19);
             this.logOut_linkLabel.TabIndex = 6;
             this.logOut_linkLabel.TabStop = true;
             this.logOut_linkLabel.Text = "Log Out";
@@ -125,16 +132,18 @@
             // 
             // Student_Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1029, 534);
             this.Controls.Add(this.navbarPanel);
             this.Controls.Add(this.intro_label);
             this.Controls.Add(this.welcome_label);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "Student_Home";
             this.Text = "Student_Home";
+            this.Load += new System.EventHandler(this.Student_Home_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.welcome_label, 0);
             this.Controls.SetChildIndex(this.intro_label, 0);

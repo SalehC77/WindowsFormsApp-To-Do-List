@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,11 +11,11 @@ namespace To_Do_List
 {
     internal partial class viewDoctors : ParentForm
     {
-        ApplicationDbContext db = new ApplicationDbContext();
-        Person currentPerson;
-        public viewDoctors(Person currentPerson)
+        ApplicationDbContext _db = new ApplicationDbContext();
+        private readonly User _User;
+        public viewDoctors(User User)
         {
-            this.currentPerson = currentPerson;
+            this._User = User;
             InitializeComponent();
             LoadDoctorData();
             this.FormClosed += viewDoctors_FormClosed;
@@ -24,7 +25,7 @@ namespace To_Do_List
         private void LoadDoctorData()
         {
             doctors_dataGridView.Rows.Clear();
-            var doctorStaff = db.Staffs
+            var doctorStaff = _db.Staffs
                 .Where(s => s.Person.User.Role.Name.ToLower() == "doctor")
                 .Select(s => new
                 {
@@ -82,7 +83,7 @@ namespace To_Do_List
         }
         private void viewDoctors_FormClosed(object sender, FormClosedEventArgs e)
         {
-            db.Dispose();
+            _db.Dispose();
         }
         private bool ValidateAppointmentForm(out string combinedErrors)
         {
@@ -117,8 +118,8 @@ namespace To_Do_List
             var selectedRow = doctors_dataGridView.SelectedRows[0];
             int staffId = Convert.ToInt32(selectedRow.Cells[0].Value);
 
-            var staff = db.Staffs.First(s => s.Id == staffId);
-            var student = db.Students.First(s => s.PersonId == currentPerson.Id);
+            var staff = _db.Staffs.FirstOrDefault(s => s.Id == staffId);
+            var student = _db.Students.Include(s => s.Person).FirstOrDefault(s => s.Person.UserId == _User.Id);
   
             double durationHours = durations[duration_comboBox.SelectedIndex];
             int durationMinutes = (int)(durationHours * 60);
@@ -135,8 +136,8 @@ namespace To_Do_List
                 Notes = notes
             };
 
-            db.Sessions.Add(newSession);
-            db.SaveChanges();
+            _db.Sessions.Add(newSession);
+            _db.SaveChanges();
 
             MessageBox.Show("Session successfully created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -145,12 +146,12 @@ namespace To_Do_List
         private void viewActivities_LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            new ViewActivites(currentPerson).Show();
+            new ViewActivites(_User).Show();
         }
         private void logOut_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            new Login().Show();
+            new login().Show();
         }
         private void duration_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {

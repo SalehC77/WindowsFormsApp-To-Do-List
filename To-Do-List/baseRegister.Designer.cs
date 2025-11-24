@@ -51,30 +51,33 @@
             // 
             this.username_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.username_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username_textBox.Location = new System.Drawing.Point(383, 116);
+            this.username_textBox.Location = new System.Drawing.Point(492, 138);
+            this.username_textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.username_textBox.Multiline = true;
             this.username_textBox.Name = "username_textBox";
-            this.username_textBox.Size = new System.Drawing.Size(182, 30);
+            this.username_textBox.Size = new System.Drawing.Size(234, 36);
             this.username_textBox.TabIndex = 0;
             // 
             // email_textBox
             // 
             this.email_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.email_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email_textBox.Location = new System.Drawing.Point(383, 172);
+            this.email_textBox.Location = new System.Drawing.Point(492, 204);
+            this.email_textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.email_textBox.Multiline = true;
             this.email_textBox.Name = "email_textBox";
-            this.email_textBox.Size = new System.Drawing.Size(182, 30);
+            this.email_textBox.Size = new System.Drawing.Size(234, 36);
             this.email_textBox.TabIndex = 1;
             // 
             // password_textBox
             // 
             this.password_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.password_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password_textBox.Location = new System.Drawing.Point(383, 228);
+            this.password_textBox.Location = new System.Drawing.Point(492, 271);
+            this.password_textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.password_textBox.Multiline = true;
             this.password_textBox.Name = "password_textBox";
-            this.password_textBox.Size = new System.Drawing.Size(182, 30);
+            this.password_textBox.Size = new System.Drawing.Size(234, 36);
             this.password_textBox.TabIndex = 2;
             this.password_textBox.UseSystemPasswordChar = true;
             // 
@@ -82,9 +85,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(426, 67);
+            this.label1.Location = new System.Drawing.Point(548, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 24);
+            this.label1.Size = new System.Drawing.Size(112, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Register";
             // 
@@ -92,9 +96,10 @@
             // 
             this.navbarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(67)))), ((int)(((byte)(229)))));
             this.navbarPanel.Controls.Add(this.label2);
-            this.navbarPanel.Location = new System.Drawing.Point(0, 50);
+            this.navbarPanel.Location = new System.Drawing.Point(0, 59);
+            this.navbarPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navbarPanel.Name = "navbarPanel";
-            this.navbarPanel.Size = new System.Drawing.Size(154, 407);
+            this.navbarPanel.Size = new System.Drawing.Size(198, 483);
             this.navbarPanel.TabIndex = 4;
             // 
             // label2
@@ -102,9 +107,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 26);
+            this.label2.Location = new System.Drawing.Point(15, 31);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 120);
+            this.label2.Size = new System.Drawing.Size(155, 144);
             this.label2.TabIndex = 0;
             this.label2.Text = "Welcome\r\nto Center\r\nfor Special\r\nNeeds !";
             // 
@@ -113,9 +119,10 @@
             this.role_comboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.role_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.role_comboBox.FormattingEnabled = true;
-            this.role_comboBox.Location = new System.Drawing.Point(383, 284);
+            this.role_comboBox.Location = new System.Drawing.Point(492, 337);
+            this.role_comboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.role_comboBox.Name = "role_comboBox";
-            this.role_comboBox.Size = new System.Drawing.Size(182, 24);
+            this.role_comboBox.Size = new System.Drawing.Size(233, 27);
             this.role_comboBox.TabIndex = 5;
             // 
             // RegisterButton
@@ -124,9 +131,10 @@
             this.RegisterButton.FlatAppearance.BorderSize = 0;
             this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterButton.ForeColor = System.Drawing.Color.White;
-            this.RegisterButton.Location = new System.Drawing.Point(470, 334);
+            this.RegisterButton.Location = new System.Drawing.Point(604, 397);
+            this.RegisterButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(95, 30);
+            this.RegisterButton.Size = new System.Drawing.Size(122, 36);
             this.RegisterButton.TabIndex = 12;
             this.RegisterButton.Text = "Continue";
             this.RegisterButton.UseVisualStyleBackColor = false;
@@ -134,9 +142,9 @@
             // 
             // baseRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1029, 534);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.role_comboBox);
             this.Controls.Add(this.navbarPanel);
@@ -144,8 +152,10 @@
             this.Controls.Add(this.username_textBox);
             this.Controls.Add(this.email_textBox);
             this.Controls.Add(this.password_textBox);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "baseRegister";
             this.Text = "baseRegister";
+            this.Load += new System.EventHandler(this.baseRegister_Load);
             this.Controls.SetChildIndex(this.password_textBox, 0);
             this.Controls.SetChildIndex(this.email_textBox, 0);
             this.Controls.SetChildIndex(this.username_textBox, 0);
