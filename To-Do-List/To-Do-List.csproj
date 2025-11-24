@@ -114,6 +114,12 @@
     <Compile Include="Donor Home.Designer.cs">
       <DependentUpon>Donor Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202511060853140_initCreate.cs" />
     <Compile Include="Migrations\202511060853140_initCreate.Designer.cs">
       <DependentUpon>202511060853140_initCreate.cs</DependentUpon>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Donor Home.resx">
       <DependentUpon>Donor Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202511060853140_initCreate.resx">
       <DependentUpon>202511060853140_initCreate.cs</DependentUpon>
