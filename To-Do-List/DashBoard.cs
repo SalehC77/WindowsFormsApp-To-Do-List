@@ -77,5 +77,11 @@ namespace To_Do_List
             DashBoardView view = new DashBoardView("Session");
             view.ShowDialog();
         }
+
+        private void createStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaffForm staffForm = new StaffForm();
+            staffForm.ShowDialog();
+        }
     }
 }

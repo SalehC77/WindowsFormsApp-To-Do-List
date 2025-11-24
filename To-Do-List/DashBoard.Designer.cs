@@ -236,7 +236,7 @@
             this.viewAllStudentsToolStripMenuItem});
             this.studentToolStripMenuItem.Image = global::To_Do_List.Properties.Resources.read_1;
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
-            this.studentToolStripMenuItem.Size = new System.Drawing.Size(196, 34);
+            this.studentToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.studentToolStripMenuItem.Text = "Student";
             // 
             // viewRequestsToolStripMenuItem
@@ -259,7 +259,7 @@
             this.viewDonorToolStripMenuItem});
             this.donorToolStripMenuItem.Image = global::To_Do_List.Properties.Resources.heart_1;
             this.donorToolStripMenuItem.Name = "donorToolStripMenuItem";
-            this.donorToolStripMenuItem.Size = new System.Drawing.Size(196, 34);
+            this.donorToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.donorToolStripMenuItem.Text = "Donor";
             // 
             // viewDonorToolStripMenuItem
@@ -276,19 +276,20 @@
             this.displayAllStaffsToolStripMenuItem});
             this.staffToolStripMenuItem.Image = global::To_Do_List.Properties.Resources.doctor_1;
             this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
-            this.staffToolStripMenuItem.Size = new System.Drawing.Size(196, 34);
+            this.staffToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.staffToolStripMenuItem.Text = "Staff";
             // 
             // createStaffToolStripMenuItem
             // 
             this.createStaffToolStripMenuItem.Name = "createStaffToolStripMenuItem";
-            this.createStaffToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.createStaffToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.createStaffToolStripMenuItem.Text = "Create Staff";
+            this.createStaffToolStripMenuItem.Click += new System.EventHandler(this.createStaffToolStripMenuItem_Click);
             // 
             // displayAllStaffsToolStripMenuItem
             // 
             this.displayAllStaffsToolStripMenuItem.Name = "displayAllStaffsToolStripMenuItem";
-            this.displayAllStaffsToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.displayAllStaffsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.displayAllStaffsToolStripMenuItem.Text = "View Staffs";
             this.displayAllStaffsToolStripMenuItem.Click += new System.EventHandler(this.displayAllStaffsToolStripMenuItem_Click);
             // 
@@ -342,7 +343,7 @@
             // viewSessionsToolStripMenuItem
             // 
             this.viewSessionsToolStripMenuItem.Name = "viewSessionsToolStripMenuItem";
-            this.viewSessionsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.viewSessionsToolStripMenuItem.Size = new System.Drawing.Size(259, 34);
             this.viewSessionsToolStripMenuItem.Text = "View Sessions";
             this.viewSessionsToolStripMenuItem.Click += new System.EventHandler(this.viewSessionsToolStripMenuItem_Click);
             // 

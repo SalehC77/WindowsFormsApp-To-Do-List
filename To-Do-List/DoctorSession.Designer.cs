@@ -105,6 +105,7 @@
             this.label2.Size = new System.Drawing.Size(607, 42);
             this.label2.TabIndex = 5;
             this.label2.Text = "This page display all appointments assigned to you";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dgvdoctor
             // 
