@@ -101,7 +101,7 @@ namespace To_Do_List
             }
             else if (role == "donor")
             {
-                //*   new DoctorHome(user).Show();       
+                new DoctorSession(user).Show();
             }
             else
             {
