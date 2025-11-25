@@ -21,7 +21,7 @@ namespace To_Do_List
         public ViewActivites(User user)
         {
             _User = user;
-            _currentPerson = _db.People.FirstOrDefault(p => p.UserId == user.Id);
+            _currentPerson = _db.People.FirstOrDefault(p => p.UserId == _User.Id);
             
             InitializeComponent();
             InitializeNotesPlaceholder();
