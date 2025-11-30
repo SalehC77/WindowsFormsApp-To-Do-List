@@ -16,14 +16,33 @@ namespace To_Do_List
 {
     public partial class registerdonor : Form
     {
+        User userModel;
 
-        public registerdonor()
+        Person personModel;
+
+        Donor donormodel;
+
+        ApplicationDbContext db;
+        internal registerdonor(User userModel)
         {
+            this.userModel = userModel;
+
             InitializeComponent();
+
+            personModel = new Person();
+            donormodel = new Donor();
+            db = new ApplicationDbContext();
         }
+        Donor donorModel = new Donor();
 
-
-
+        private void PopulateGenderCombo()
+        {
+            comboBoxGender.Items.Clear();
+            comboBoxGender.Items.Add("Select gender");
+            comboBoxGender.Items.Add("Male");
+            comboBoxGender.Items.Add("Female");
+            comboBoxGender.SelectedIndex = 0;
+        }
 
         private void registerasdonor_Load(object sender, EventArgs e)
         {
@@ -37,7 +56,7 @@ namespace To_Do_List
 
         private void label1_TextChanged(object sender, EventArgs e)
         {
-    
+
         }
 
         private void textBoxFullName_TextChanged(object sender, EventArgs e)
@@ -55,7 +74,7 @@ namespace To_Do_List
 
         }
 
-      
+
 
         private void comboBoxGender_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -119,11 +138,45 @@ namespace To_Do_List
             return errors.Count == 0;
         }
 
-
+        private int CalculateAge(DateTime birth)
+        {
+            var today = DateTime.Today;
+            int age = today.Year - birth.Year;
+            if (birth > today.AddYears(-age)) age--;
+            return age;
+        }
         private void btnRegsiter_Click(object sender, EventArgs e)
         {
-      
-          
+            if (!ValidateForm(out var errors))
+            {
+                MessageBox.Show(errors, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            personModel.FullName = textBoxFullName.Text.Trim();
+            personModel.Gender = comboBoxGender.Text == "Male";
+            personModel.DateOfBirth = dateTimePicker1.Value.Date;
+            personModel.Age = CalculateAge(personModel.DateOfBirth);
+            personModel.PhoneNumber = phonenumbertextbox.Text.Trim();
+            personModel.Address = AddressTextBox.Text.Trim();
+
+            personModel.UserId = userModel.Id;
+            personModel.User = userModel;
+
+            db.People.Add(personModel);
+            db.SaveChanges();
+
+            donorModel.PersonId = personModel.Id;
+            donorModel.Person = personModel;
+            db.Donors.Add(donorModel);
+            db.SaveChanges();
+
+            MessageBox.Show("Registration completed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            this.Close();
+            new Donor_Home(personModel).Show();
+
+
         }
 
     }
