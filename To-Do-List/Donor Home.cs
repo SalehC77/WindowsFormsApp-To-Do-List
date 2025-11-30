@@ -11,11 +11,13 @@ using To_Do_List.Entities;
 
 namespace To_Do_List
 {
-    public partial class Donor_Home : Form
+    internal partial class Donor_Home : Form
     {
-        public Donor_Home()
+        Donor _Donor;
+        public Donor_Home(Donor donor)
         {
             InitializeComponent();
+            _Donor = donor;
         }
 
         private void label_gender_Click(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace To_Do_List
 
         private void label_make_donation_Click(object sender, EventArgs e)
         {
-            Donation_Page donationForm = new Donation_Page();
+            Donation_Page donationForm = new Donation_Page(_Donor);
             donationForm.Show();
 
             this.Hide();

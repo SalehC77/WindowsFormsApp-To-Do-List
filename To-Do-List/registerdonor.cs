@@ -16,24 +16,19 @@ namespace To_Do_List
 {
     public partial class registerdonor : Form
     {
-        User userModel;
-
-        Person personModel;
-
-        Donor donormodel;
-
-        ApplicationDbContext db;
+        User _UserModel;
+        Person _PersonModel;
+        Donor _DonorModel;
+        ApplicationDbContext _db;
         internal registerdonor(User userModel)
         {
-            this.userModel = userModel;
-
             InitializeComponent();
-
-            personModel = new Person();
-            donormodel = new Donor();
-            db = new ApplicationDbContext();
+            this._UserModel = userModel;
+            _PersonModel = new Person();
+            _DonorModel = new Donor();
+            _db = new ApplicationDbContext();
         }
-        Donor donorModel = new Donor();
+       
 
         private void PopulateGenderCombo()
         {
@@ -152,29 +147,29 @@ namespace To_Do_List
                 MessageBox.Show(errors, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            personModel.FullName = textBoxFullName.Text.Trim();
-            personModel.Gender = comboBoxGender.Text == "Male";
-            personModel.DateOfBirth = dateTimePicker1.Value.Date;
-            personModel.Age = CalculateAge(personModel.DateOfBirth);
-            personModel.PhoneNumber = phonenumbertextbox.Text.Trim();
-            personModel.Address = AddressTextBox.Text.Trim();
+            _PersonModel.FullName = textBoxFullName.Text.Trim();
+            _PersonModel.Gender = comboBoxGender.Text == "Male";
+            _PersonModel.DateOfBirth = dateTimePicker1.Value.Date;
+            _PersonModel.Age = CalculateAge(_PersonModel.DateOfBirth);
+            _PersonModel.PhoneNumber = phonenumbertextbox.Text.Trim();
+            _PersonModel.Address = AddressTextBox.Text.Trim();
 
-            personModel.UserId = userModel.Id;
-            personModel.User = userModel;
+            _PersonModel.UserId = _UserModel.Id;
+            _PersonModel.User = _UserModel;
 
-            db.People.Add(personModel);
-            db.SaveChanges();
+            _db.People.Add(_PersonModel);
+            _db.SaveChanges();
 
-            donorModel.PersonId = personModel.Id;
-            donorModel.Person = personModel;
-            db.Donors.Add(donorModel);
-            db.SaveChanges();
+            _DonorModel.PersonId = _PersonModel.Id;
+            _DonorModel.Person = _PersonModel;
+            _db.Donors.Add(_DonorModel);
+            _db.SaveChanges();
 
             MessageBox.Show("Registration completed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             this.Close();
-            new Donor_Home(personModel).Show();
+            new Donor_Home(_DonorModel).Show();
 
 
         }

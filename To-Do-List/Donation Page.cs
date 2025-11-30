@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using To_Do_List.Data;
+using To_Do_List.Entities;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace To_Do_List
 {
-    public partial class Donation_Page : Form
+    internal partial class Donation_Page : Form
     {
-        public Donation_Page()
+        Donor _Donor;
+        ApplicationDbContext _db ;
+        Donation _Donation;
+        public Donation_Page(Donor Donor)
         {
+            _db = new ApplicationDbContext();
+            _Donation = new Donation();
+            _Donor = Donor;
+            
             InitializeComponent();
         }
         private void Donation_Page_Load(object sender, EventArgs e)
@@ -53,12 +62,15 @@ namespace To_Do_List
                 comboBox_payment_method.Focus();
                 return;
             }
-
-            int amount = int.Parse(textBox_amount.Text);
-            string category1 = comboBox_currency.SelectedItem.ToString();
-            string category2 = comboBox_payment_method.SelectedItem.ToString();
-            string purpose =  richTextBox_purpose.Text;
-            DateTime donationTime = dateTimePicker1.Value;
+            _Donation.DonorId = _Donor.Id;
+            _Donation.Amount  = int.Parse(textBox_amount.Text);
+            _Donation.Currency  = comboBox_currency.SelectedItem.ToString();
+            _Donation.PaymentMethod  = comboBox_payment_method.SelectedItem.ToString();
+            _Donation.Purpose  =  richTextBox_purpose.Text;
+            _Donation.DonationDate = dateTimePicker1.Value;
+          
+            _db.Donations.Add(_Donation);
+            _db.SaveChanges();
 
             MessageBox.Show($"Thanks for your donation!",
                     "Donation Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,7 +107,7 @@ namespace To_Do_List
 
         private void label_donor_home_Click(object sender, EventArgs e)
         {
-             Donor_Home HomeForm = new Donor_Home();
+             Donor_Home HomeForm = new Donor_Home(_Donor);
 
             HomeForm.Show();
 
